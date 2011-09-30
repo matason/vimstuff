@@ -11,9 +11,10 @@ filetype plugin indent on
 
 " Colorscheme, options for GUI only.
 if has("gui_running")
-  colorscheme wombat
+  colorscheme clean
   set guioptions-=T
   set guitablabel=%t
+  set background=dark
 else
   colorscheme slate
 endif
