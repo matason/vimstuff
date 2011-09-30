@@ -65,6 +65,9 @@ set wildmode=longest,list " File and directory matching mode.
 
 syntax on " Syntax highlighting on.
 
+" Diff opt
+set diffopt=vertical
+
 " Drupal command group, set the correct filetypes for Drupal files.
 augroup drupal
   autocmd BufRead,BufNewFile *.module set filetype=php
