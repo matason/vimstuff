@@ -1,23 +1,21 @@
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: matason
 " Contact: hello@webgoodness.co.uk
-" Info: This is my .vimrc file, no fancy stuff, just the basics I've found
-" useful. Wombat is a dark gray color scheme available which I really like, get
-" it at http://www.vim.org/scripts/script.php?script_id=1778
+" Info: This is my .vimrc file.
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set filetype detection on, load plugins and indent.
 filetype plugin indent on
 
-" Colorscheme, options for GUI only.
+" Remove toolbar in mvim.
 if has("gui_running")
-  colorscheme clean
   set guioptions-=T
   set guitablabel=%t
-  set background=dark
-else
-  colorscheme slate
 endif
+
+" Colours.
+colorscheme darktango
+syntax on " Syntax highlighting on.
 
 " Use vim defaults.
 set nocompatible
@@ -36,16 +34,17 @@ set scrolloff=5 " Show 5 lines above/below the cursor when scrolling.
 set number " Line numbers on.
 set showcmd " Shows the command in the last line of the screen.
 set autoread " Read files when they've been changed outside of Vim.
-"set cursorline " Highlight current line, I found this slowed things.
+set cursorline " Highlight current line.
+set hidden " Hide a buffer when it's abandoned.
+set history=10000 " Number of command lines stored in the history tables.
+set list
+set textwidth=80
+set report=0
 
 " Bells and whistles.
 set novisualbell
 set noerrorbells
 set t_vb=
-
-set history=300 " Number of command lines stored in the history tables.
-
-set title " Set the title in the console.
 
 " Use matchtime and showmatch together.
 set matchtime=2 " Time to show matching parent in 10ths of a sec.
@@ -63,8 +62,6 @@ set ignorecase
 set smartcase
 
 set wildmode=longest,list " File and directory matching mode.
-
-syntax on " Syntax highlighting on.
 
 " Diff opt
 set diffopt=vertical
@@ -89,3 +86,21 @@ augroup END
 " Map keys to navigate tabs
 :map <C-Left> :tabprevious<CR>
 :map <C-Right> :tabnext<CR>
+
+let mapleader=","
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+nmap <silent> <leader>w :call StripTrailingWhitespaces()<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+function! StripTrailingWhitespaces()
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  let @/=_s
+  call cursor(l, c)
+endfunction
