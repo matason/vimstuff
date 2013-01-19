@@ -10,7 +10,6 @@ set nocompatible
 " Set filetype detection on, load plugins and indent.
 filetype plugin indent on
 
-" Remove toolbar in mvim.
 syntax enable " Syntax highlighting on.
 
 if has("gui_running")
