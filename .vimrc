@@ -80,6 +80,10 @@ augroup drupal
   autocmd BufRead,BufNewFile *.test set filetype=php
 augroup END
 
+augroup twig
+  autocmd BufRead,BufNewFile *.twig set filetype=htmljinja
+augroup END
+
 " Prevent help popping up catch <F1> instead of <ESC>.
 :nmap <F1> <ESC>
 :map <F1> <ESC>
