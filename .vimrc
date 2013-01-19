@@ -14,6 +14,7 @@ filetype plugin indent on
 if has("gui_running")
   set guioptions-=T
   set guitablabel=%t
+  set cursorline " Highlight current line.
 endif
 
 " Colours.
@@ -34,7 +35,6 @@ set scrolloff=5 " Show 5 lines above/below the cursor when scrolling.
 set number " Line numbers on.
 set showcmd " Shows the command in the last line of the screen.
 set autoread " Read files when they've been changed outside of Vim.
-set cursorline " Highlight current line.
 set hidden " Hide a buffer when it's abandoned.
 set history=10000 " Number of command lines stored in the history tables.
 set list
