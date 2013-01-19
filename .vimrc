@@ -4,6 +4,9 @@
 " Info: This is my .vimrc file.
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Use vim defaults.
+set nocompatible
+
 " Set filetype detection on, load plugins and indent.
 filetype plugin indent on
 
@@ -16,9 +19,6 @@ endif
 " Colours.
 colorscheme darktango
 syntax on " Syntax highlighting on.
-
-" Use vim defaults.
-set nocompatible
 
 " Tabs, Spaces and Indentation.
 set expandtab " Use spaces for tabs.
