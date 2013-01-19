@@ -11,15 +11,17 @@ set nocompatible
 filetype plugin indent on
 
 " Remove toolbar in mvim.
+syntax enable " Syntax highlighting on.
+
 if has("gui_running")
   set guioptions-=T
   set guitablabel=%t
   set cursorline " Highlight current line.
+  set background=light
+  colorscheme tomorrow
+else
+  colorscheme default
 endif
-
-" Colours.
-colorscheme darktango
-syntax on " Syntax highlighting on.
 
 " Tabs, Spaces and Indentation.
 set expandtab " Use spaces for tabs.
