@@ -1,8 +1,3 @@
-MY VIM FILES
-============
+I've updated my set up to use Pathogen - https://github.com/tpope/vim-pathogen
 
-VIM related configuration files.
-
-AUTHOR
-------
-matason - hello@webgoodness.co.uk
+See https://github.com/matason/dotvim instead.
